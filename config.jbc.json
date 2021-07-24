@@ -1,0 +1,32 @@
+{
+    "name": "The 1st bot",
+    "exchange": "binance-usdt-m",
+    "pairs": ["ADAUSDT", "BNBUSDT", "BTCUSDT"],
+    "algo": "long",
+    "deposit": 40,
+    "depositType": "percent",
+    "leverage": 5,
+    "orders": {
+        "count": 10,
+        "firstOrderShift": 0.01,
+        "initialStep": 0.3,
+        "volMultiplier": 1.05,
+        "profit": 0.5,
+        "lift": 0.1,
+        "priceMultiplier": 1.1,
+        "activeOrds": 5
+    },
+    "filters": {
+        "f0": {
+            "type": "rsi_5min",
+            "<": 50
+        },
+        "f1": {
+            "type": "rsi_2h",
+            "<": 70
+        },
+        "f2": {
+            "type": "bollinger_bands_lower_5min"
+        }
+    }
+}
